@@ -13,24 +13,31 @@
     <div id="statusmessagefield"></div><br/>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script>
-        liff.init();
+        window.onload = function (e) {
+            liff.init(function (data) {
+                initializeApp(data);
+            });
+        };
 
-        liff.getProfile().then(function (profile) {
-            document.getElementById('useridprofilefield').textContent = profile.userId;
-            document.getElementById('displaynamefield').textContent = profile.displayName;
+        function initializeApp(data){
 
-            var profilePictureDiv = document.getElementById('profilepicturediv');
-            if (profilePictureDiv.firstElementChild) {
-                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            }
-            var img = document.createElement('img');
-            img.src = profile.pictureUrl;
-            img.alt = "Profile Picture";
-            profilePictureDiv.appendChild(img);
+            liff.getProfile().then(function (profile) {
+                document.getElementById('useridprofilefield').textContent = profile.userId;
+                document.getElementById('displaynamefield').textContent = profile.displayName;
 
-            document.getElementById('statusmessagefield').textContent = profile.statusMessage;
-        }).catch(function (error) {
-            window.alert("Error getting profile: " + error);
-        });
+                var profilePictureDiv = document.getElementById('profilepicturediv');
+                if (profilePictureDiv.firstElementChild) {
+                    profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+                }
+                var img = document.createElement('img');
+                img.src = profile.pictureUrl;
+                img.alt = "Profile Picture";
+                profilePictureDiv.appendChild(img);
+
+                document.getElementById('statusmessagefield').textContent = profile.statusMessage;
+            }).catch(function (error) {
+                window.alert("Error getting profile: " + error);
+            });
+        }
     </script>
 </body>
