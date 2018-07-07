@@ -4,8 +4,8 @@
 </head>
 
 <body>
-    <h1>Welcome to callback page</h1>
-    <a href="page2.php">go to page 2</a>
+    <h1>This is Page 2</h1>
+    <a href="callback.php">back to callback page</a>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script>
       liff.init()
