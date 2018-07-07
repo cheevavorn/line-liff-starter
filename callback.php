@@ -8,8 +8,9 @@
     <a href="page2.php">go to page 2</a><br/>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script>
-      liff.init();
-    //   liff.getProfile()
-      document.write("<p>" + liff.getProfile() + "</p>");
+        alert()
+        liff.init();
+        // liff.getProfile()
+        document.write("<p>" + JSON.stringify(liff.getProfile()) + "</p>");
     </script>
 </body>
