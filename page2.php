@@ -6,8 +6,8 @@
 <body>
     <h1>This is Page 2</h1>
     <a href="callback.php">back to callback page</a>
-    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <!-- <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script> -->
     <script>
-      liff.init()
+      // liff.init()
     </script>
 </body>
